@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/icon.png' %}">
+    <title>DR Detection</title>
+</head>
+
+<body>
+    <section id="nav">
+        <img src="{% static 'images/medical-symbol.png' %}" alt=""
+            style="height: 30px;width:30px;position: absolute;top: 16px;left: 12px; ">
+        <header>Diabetic Retinopathy Detection</header>
+    </section>
+    <section id="about">
+        <img src="{% static 'images/about-symbol1.png' %}" alt="" style="height: 300px;width: 300px;position: absolute;top: 110px;
+        left: 80px;">
+        <img src="{% static 'images/myth.jpg' %}" alt="" style="height:400px ;width:300px;position:absolute;left:850px">
+    </section>
+    <section id="info">
+        <div class="diabInfo">
+            <p>
+                Diabetic retinopathy is a diabetes complication that affects eyes. It's caused by damage to the blood
+                vessels of the light-sensitive tissue at the back of the eye (retina).
+
+                At first, diabetic retinopathy might cause no symptoms or only mild vision problems. But it can lead to
+                blindness.
+
+                The condition can develop in anyone who has type 1 or type 2 diabetes. The longer you have diabetes and
+                the less controlled your blood sugar is, the more likely you are to develop this eye complication.
+            </p>
+            <br>
+            <p>
+                Careful management of your diabetes is the best way to prevent vision loss. If you have diabetes, see
+                your eye doctor for a yearly eye exam with dilation — even if your vision seems fine.
+            </p>
+        </div>
+        <img src="{% static 'images/dr.jpg' %}" alt="" style="height: 500px;width:400px; position:relative;left:150px;bottom:250px;
+        border-radius: 20px;">
+    </section>
+    <section id="symptoms">
+        <h1>Symptoms</h1>
+        <img src="{% static 'images/blurred.png' %}" alt="" style="position: relative;left:30px">
+        <p style="position: absolute;top:1630px;left: 63px;color:black;font-size: 20px;">
+            Blurry Vision
+        </p>
+        <img src="{% static 'images/color-blindness.png' %}" alt="" style="position: relative;left:180px">
+        <p style="position: absolute;top:1630px;left: 373px;color:black;font-size: 20px;">
+            Color Blindness
+        </p>
+        <img src="{% static 'images/moon.png' %}" alt="" style="position: relative;left:300px">
+        <p style="position: absolute;top:1630px;left: 660px;color:black;font-size: 20px;">
+            Poor Night Vision
+        </p>
+        <img src="{% static 'images/cnj.png' %}" alt="" style="position: relative;left:450px">
+        <p style="position: absolute;top:1630px;left: 1008px;color:black;font-size: 20px;">
+            Dark Strings
+        </p>
+        <img src="{% static 'images/blind.png' %}" alt="" style="position: relative;left:600px">
+        <p style="position: absolute;top:1630px;left: 1335px;color:black;font-size: 20px;">
+            Vision Loss
+        </p>
+
+
+    </section>
+    <section id="test">
+        <h1>Check Your Eye Now!</h1>
+        <img src="{% static 'images/test.png' %}" alt="" style="position: absolute;left:28px;top:1940px;
+        height:450px;width: 450px;">
+        <div class="formDiv">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    <input name="filePath" type="file" class="fileInput">
+                    <br><br>
+                </div>
+                <input id="submit-btn" class="submitButton" type="submit" value="Check Now">
+            </form>
+            <!-- {% if ans %}
+            <p id="result">{{ ans }}</p>
+            {% endif %} -->
+        </div>
+    </section>
+    <section id="footer">
+        <p style="padding: 0;margin:0;text-align: center;color: antiquewhite;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;position: relative;top: 8px;">All Rights Reserved</p>
+    </section>
+
+    <!-- <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <input name="filePath" type="file">
+            <br><br><br>
+        </div>
+        <input id="submit-btn" class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    {% if ans %}
+    {{ ans }}
+
+    {% endif %} -->
+    <!-- <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}    
+        <input type="submit">
+    </form>
+    {% if ans != -1 %}
+        {{ ans }}
+    {% endif %} -->
+
+
+</body>
+
+</html>

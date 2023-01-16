@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("{% static 'images/bg4.jpg' %}");
+
+            }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;
+    font-size: 40px;color: coral;">Here Are Your Test Results</h1>
+    <img src="{{imgPath}}" alt="" style="height:250px;width:250px;border-radius: 10px;position: absolute;left: 620px;">
+    <p style="text-align: center; font-size:larger; position: absolute;top:360px;left: 630px;">Result: {{ ans }}</p>
+
+
+</body>
+
+</html>
